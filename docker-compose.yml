@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ripapi
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=/app/data/ripapi.db
+      - SECRET_KEY=${SECRET_KEY:-change-me-in-production}
+      - FEATURE_OFFLINE=true
+      - FEATURE_PWA=false
+      - FEATURE_ANALYTICS=false
+    volumes:
+      - ripapi-data:/app/data
+    restart: unless-stopped
+    networks:
+      - ripapi-network
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/health', (r) => {if (r.statusCode !== 200) throw new Error()})"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  ripapi-data:
+    driver: local
+
+networks:
+  ripapi-network:
+    driver: bridge
