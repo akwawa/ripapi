@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
 - Initial project structure with SvelteKit + TypeScript
 - Modular architecture with plugin system
   - Module registry for extensible modules (`src/lib/core/module-registry.ts`)
@@ -76,4 +77,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.0.0] - 2025-12-02
 
 ### Added
+
 - Project initialization

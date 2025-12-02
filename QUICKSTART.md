@@ -33,18 +33,18 @@ npm run build
 
 ## Commandes principales
 
-| Commande | Description |
-|----------|-------------|
-| `npm run dev` | Démarrer le serveur de développement |
-| `npm run build` | Build de production |
-| `npm run preview` | Preview du build |
-| `npm run lint` | Vérifier le code |
-| `npm run lint:fix` | Corriger automatiquement |
-| `npm run format` | Formater le code |
-| `npm run test` | Tests en mode watch |
-| `npm run test:unit` | Tests unitaires |
-| `npm run test:e2e` | Tests end-to-end |
-| `npm run type-check` | Vérifier TypeScript |
+| Commande             | Description                          |
+| -------------------- | ------------------------------------ |
+| `npm run dev`        | Démarrer le serveur de développement |
+| `npm run build`      | Build de production                  |
+| `npm run preview`    | Preview du build                     |
+| `npm run lint`       | Vérifier le code                     |
+| `npm run lint:fix`   | Corriger automatiquement             |
+| `npm run format`     | Formater le code                     |
+| `npm run test`       | Tests en mode watch                  |
+| `npm run test:unit`  | Tests unitaires                      |
+| `npm run test:e2e`   | Tests end-to-end                     |
+| `npm run type-check` | Vérifier TypeScript                  |
 
 ---
 

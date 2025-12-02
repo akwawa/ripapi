@@ -24,6 +24,7 @@ Merci de votre intérêt pour contribuer à RipApi ! Ce document vous guidera à
 ### Nos engagements
 
 Nous nous engageons à:
+
 - Créer un environnement accueillant et inclusif
 - Respecter les points de vue et expériences différents
 - Accepter les critiques constructives avec grâce
@@ -51,6 +52,7 @@ Les violations du code de conduite peuvent être signalées en contactant l'équ
 Nous acceptons plusieurs types de contributions:
 
 #### 🐛 Signaler un bug
+
 1. Vérifiez que le bug n'a pas déjà été signalé dans les [Issues](https://github.com/votre-org/ripapi/issues)
 2. Créez une nouvelle issue avec le template "Bug Report"
 3. Incluez:
@@ -62,6 +64,7 @@ Nous acceptons plusieurs types de contributions:
    - Environnement (OS, navigateur, version)
 
 #### ✨ Proposer une fonctionnalité
+
 1. Vérifiez la [Roadmap](./ROADMAP.md) pour voir si elle est déjà prévue
 2. Recherchez dans les issues si quelqu'un l'a déjà proposée
 3. Créez une issue avec le template "Feature Request"
@@ -72,12 +75,14 @@ Nous acceptons plusieurs types de contributions:
    - Des exemples d'utilisation
 
 #### 📝 Améliorer la documentation
+
 - Corriger des fautes de frappe
 - Clarifier des explications
 - Ajouter des exemples
 - Traduire la documentation
 
 #### 🔧 Contribuer au code
+
 - Corriger des bugs
 - Implémenter des fonctionnalités
 - Optimiser les performances
@@ -97,39 +102,46 @@ Nous acceptons plusieurs types de contributions:
 ### Installation
 
 1. **Fork le projet**
+
    ```bash
    # Via GitHub UI: cliquez sur "Fork"
    ```
 
 2. **Cloner votre fork**
+
    ```bash
    git clone https://github.com/votre-username/ripapi.git
    cd ripapi
    ```
 
 3. **Ajouter le dépôt upstream**
+
    ```bash
    git remote add upstream https://github.com/votre-org/ripapi.git
    ```
 
 4. **Installer les dépendances**
+
    ```bash
    npm install
    ```
 
 5. **Configurer l'environnement**
+
    ```bash
    cp .env.example .env
    # Éditez .env avec vos paramètres locaux
    ```
 
 6. **Initialiser la base de données**
+
    ```bash
    npm run db:migrate
    npm run db:seed # (optionnel, pour données de test)
    ```
 
 7. **Lancer l'application en mode développement**
+
    ```bash
    npm run dev
    ```
@@ -197,6 +209,7 @@ git checkout -b type/issue-number-description
 ```
 
 **Nomenclature des branches:**
+
 - `feature/123-add-graphql-support` - Nouvelle fonctionnalité
 - `fix/456-fix-auth-bug` - Correction de bug
 - `docs/789-update-readme` - Documentation
@@ -222,6 +235,7 @@ npm run format      # Formater le code
 ### 4. Créer une Pull Request (PR)
 
 1. **Pusher votre branche**
+
    ```bash
    git push origin votre-branche
    ```
@@ -267,22 +281,23 @@ npm run format      # Formater le code
 ```typescript
 // ✅ Bon
 interface UserProfile {
-  id: string;
-  name: string;
-  email: string;
+	id: string;
+	name: string;
+	email: string;
 }
 
 const MAX_RETRY_ATTEMPTS = 3;
 
 function fetchUserProfile(userId: string): Promise<UserProfile> {
-  // ...
+	// ...
 }
 
 // ❌ Mauvais
-const max_retry = 3;  // Mauvaise convention
+const max_retry = 3; // Mauvaise convention
 
-function fetchUser(id: any) {  // Pas de type any
-  // ...
+function fetchUser(id: any) {
+	// Pas de type any
+	// ...
 }
 ```
 
@@ -295,13 +310,18 @@ function fetchUser(id: any) {  // Pas de type any
 
 ```svelte
 <script lang="ts">
-  // ✅ Bon
-  export let userId: string;
-  export let onSave: (data: FormData) => void;
-  
-  let isLoading = false;
-  
-  $: userInitials = userName ? userName.split(' ').map(n => n[0]).join('') : '';
+	// ✅ Bon
+	export let userId: string;
+	export let onSave: (data: FormData) => void;
+
+	let isLoading = false;
+
+	$: userInitials = userName
+		? userName
+				.split(' ')
+				.map((n) => n[0])
+				.join('')
+		: '';
 </script>
 ```
 
@@ -314,21 +334,21 @@ function fetchUser(id: any) {  // Pas de type any
 
 ```svelte
 <style>
-  .button {
-    /* Utiliser les variables du design system */
-    background-color: var(--color-primary);
-    padding: var(--spacing-md);
-    border-radius: var(--radius-sm);
-    
-    /* Mobile-first */
-    font-size: var(--font-size-sm);
-  }
-  
-  @media (min-width: 768px) {
-    .button {
-      font-size: var(--font-size-md);
-    }
-  }
+	.button {
+		/* Utiliser les variables du design system */
+		background-color: var(--color-primary);
+		padding: var(--spacing-md);
+		border-radius: var(--radius-sm);
+
+		/* Mobile-first */
+		font-size: var(--font-size-sm);
+	}
+
+	@media (min-width: 768px) {
+		.button {
+			font-size: var(--font-size-md);
+		}
+	}
 </style>
 ```
 
@@ -361,11 +381,11 @@ npm run format:check
  * @throws {APIError} Si toutes les tentatives échouent
  */
 export async function executeRequest(
-  config: RequestConfig,
-  options: ExecutionOptions = {}
+	config: RequestConfig,
+	options: ExecutionOptions = {}
 ): Promise<APIResponse> {
-  // TODO(john): Ajouter support pour WebSocket
-  // ...
+	// TODO(john): Ajouter support pour WebSocket
+	// ...
 }
 ```
 
@@ -376,6 +396,7 @@ export async function executeRequest(
 ### Pour les contributeurs
 
 **Avant de soumettre:**
+
 - [ ] Les tests passent localement
 - [ ] Le code est formaté (`npm run format`)
 - [ ] Pas d'erreurs lint (`npm run lint`)
@@ -384,6 +405,7 @@ export async function executeRequest(
 - [ ] La PR décrit clairement les changements
 
 **Pendant la revue:**
+
 - Répondez aux commentaires dans les 48h
 - Soyez ouvert aux suggestions
 - Demandez des clarifications si nécessaire
@@ -392,6 +414,7 @@ export async function executeRequest(
 ### Pour les reviewers
 
 **Critères de revue:**
+
 - [ ] Le code respecte les standards
 - [ ] Les tests sont adéquats (couverture maintenue)
 - [ ] Pas de régression fonctionnelle
@@ -401,6 +424,7 @@ export async function executeRequest(
 - [ ] Accessibilité respectée (RGAA)
 
 **Style de revue:**
+
 - Soyez constructif et respectueux
 - Expliquez le "pourquoi" de vos suggestions
 - Utilisez les prefixes:
@@ -410,6 +434,7 @@ export async function executeRequest(
   - `[praise]`: Positif, bon travail!
 
 **Délais:**
+
 - Première revue: sous 48h
 - Revues suivantes: sous 24h
 
@@ -516,6 +541,7 @@ git cz
 ### Documentation utilisateur
 
 Située dans `/docs`:
+
 - Tutoriels
 - Guides d'utilisation
 - FAQ
@@ -530,6 +556,7 @@ Située dans `/docs`:
 ### Mise à jour
 
 Lors de chaque PR qui modifie le comportement:
+
 - [ ] Mettre à jour le README si nécessaire
 - [ ] Mettre à jour la documentation API
 - [ ] Ajouter/mettre à jour les exemples
@@ -542,6 +569,7 @@ Lors de chaque PR qui modifie le comportement:
 ### Types de tests
 
 #### Tests unitaires
+
 - Localisation: `/tests/unit`
 - Framework: Vitest
 - Couverture minimale: 80%
@@ -551,18 +579,19 @@ import { describe, it, expect } from 'vitest';
 import { parseAuthHeader } from '$lib/utils/auth';
 
 describe('parseAuthHeader', () => {
-  it('should parse Bearer token correctly', () => {
-    const result = parseAuthHeader('Bearer abc123');
-    expect(result).toEqual({ type: 'bearer', token: 'abc123' });
-  });
-  
-  it('should throw on invalid format', () => {
-    expect(() => parseAuthHeader('Invalid')).toThrow();
-  });
+	it('should parse Bearer token correctly', () => {
+		const result = parseAuthHeader('Bearer abc123');
+		expect(result).toEqual({ type: 'bearer', token: 'abc123' });
+	});
+
+	it('should throw on invalid format', () => {
+		expect(() => parseAuthHeader('Invalid')).toThrow();
+	});
 });
 ```
 
 #### Tests d'intégration
+
 - Localisation: `/tests/integration`
 - Testent l'interaction entre modules
 
@@ -571,21 +600,22 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import { setupTestDB, teardownTestDB } from '../helpers';
 
 describe('Collection API', () => {
-  beforeEach(async () => {
-    await setupTestDB();
-  });
-  
-  it('should create and retrieve a collection', async () => {
-    const response = await createCollection({ name: 'Test' });
-    expect(response.status).toBe(201);
-    
-    const collection = await getCollection(response.data.id);
-    expect(collection.name).toBe('Test');
-  });
+	beforeEach(async () => {
+		await setupTestDB();
+	});
+
+	it('should create and retrieve a collection', async () => {
+		const response = await createCollection({ name: 'Test' });
+		expect(response.status).toBe(201);
+
+		const collection = await getCollection(response.data.id);
+		expect(collection.name).toBe('Test');
+	});
 });
 ```
 
 #### Tests E2E
+
 - Localisation: `/tests/e2e`
 - Framework: Playwright
 - Testent les workflows utilisateurs
@@ -594,13 +624,13 @@ describe('Collection API', () => {
 import { test, expect } from '@playwright/test';
 
 test('user can create a REST request', async ({ page }) => {
-  await page.goto('/');
-  await page.click('button:has-text("New Request")');
-  await page.selectOption('[name="method"]', 'GET');
-  await page.fill('[name="url"]', 'https://api.example.com/users');
-  await page.click('button:has-text("Send")');
-  
-  await expect(page.locator('.response-status')).toContainText('200');
+	await page.goto('/');
+	await page.click('button:has-text("New Request")');
+	await page.selectOption('[name="method"]', 'GET');
+	await page.fill('[name="url"]', 'https://api.example.com/users');
+	await page.click('button:has-text("Send")');
+
+	await expect(page.locator('.response-status')).toContainText('200');
 });
 ```
 
@@ -611,9 +641,9 @@ import { test, expect } from '@playwright/test';
 import { injectAxe, checkA11y } from 'axe-playwright';
 
 test('homepage should be accessible', async ({ page }) => {
-  await page.goto('/');
-  await injectAxe(page);
-  await checkA11y(page);
+	await page.goto('/');
+	await injectAxe(page);
+	await checkA11y(page);
 });
 ```
 
@@ -694,17 +724,20 @@ npm run test:coverage
 ## 🎓 Ressources supplémentaires
 
 ### Documentation technique
+
 - [SvelteKit Documentation](https://kit.svelte.dev/docs)
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/)
 - [Vitest Documentation](https://vitest.dev/)
 - [Playwright Documentation](https://playwright.dev/)
 
 ### Accessibilité
+
 - [RGAA](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/)
 - [WCAG Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
 - [MDN Accessibility](https://developer.mozilla.org/en-US/docs/Web/Accessibility)
 
 ### Sécurité
+
 - [OWASP Top 10](https://owasp.org/www-project-top-ten/)
 - [HDS Certification](https://esante.gouv.fr/labels-certifications/hds)
 

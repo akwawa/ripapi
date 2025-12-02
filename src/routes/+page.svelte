@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	
+
 	let mounted = $state(false);
-	
+
 	onMount(() => {
 		mounted = true;
 	});
@@ -32,17 +32,17 @@
 					<h3>🌐 Multi-protocoles</h3>
 					<p>Support REST, GraphQL, et SOAP</p>
 				</div>
-				
+
 				<div class="feature-card">
 					<h3>🔐 Authentification extensible</h3>
 					<p>SSO, Kerberos, OAuth, et plus</p>
 				</div>
-				
+
 				<div class="feature-card">
 					<h3>📚 Collections</h3>
 					<p>Gérez et partagez vos collections d'API</p>
 				</div>
-				
+
 				<div class="feature-card">
 					<h3>♿ Accessibilité</h3>
 					<p>Conforme RGAA AAA</p>
@@ -124,7 +124,9 @@
 		padding: var(--spacing-lg);
 		border-radius: var(--radius-lg);
 		border: 1px solid var(--color-border);
-		transition: transform var(--transition-base), box-shadow var(--transition-base);
+		transition:
+			transform var(--transition-base),
+			box-shadow var(--transition-base);
 	}
 
 	.feature-card:hover {
@@ -167,7 +169,7 @@
 		.feature-card {
 			transition: none;
 		}
-		
+
 		.feature-card:hover {
 			transform: none;
 		}

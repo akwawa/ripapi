@@ -18,6 +18,7 @@ Avant toute modification du code, l'agent **DOIT** suivre cette checklist dans l
   - Référence à la ROADMAP.md si applicable
 
 **Exemple de création d'issue:**
+
 ```markdown
 Title: feat(graphql): Add GraphQL introspection support
 
@@ -25,12 +26,14 @@ Title: feat(graphql): Add GraphQL introspection support
 Implement GraphQL schema introspection to allow users to explore API schemas directly from the UI.
 
 **Acceptance Criteria:**
+
 - [ ] Introspection query execution
 - [ ] Schema explorer UI component
 - [ ] Documentation display
 - [ ] Tests added
 
 **Related:**
+
 - Roadmap: Fonctionnalités API > GraphQL > Introspection
 ```
 
@@ -40,8 +43,9 @@ Implement GraphQL schema introspection to allow users to explore API schemas dir
   ```
   <type>/<issue-number>-<short-description>
   ```
-  
+
 **Types de branches:**
+
 - `feature/` - Nouvelle fonctionnalité
 - `fix/` - Correction de bug
 - `docs/` - Documentation uniquement
@@ -50,6 +54,7 @@ Implement GraphQL schema introspection to allow users to explore API schemas dir
 - `chore/` - Maintenance, dépendances
 
 **Exemples:**
+
 ```bash
 feature/123-graphql-introspection
 fix/456-auth-token-expiration
@@ -63,6 +68,7 @@ docs/789-update-api-reference
 - [ ] Format: `<type>(<scope>): <description>`
 
 **Types de commits:**
+
 - `feat`: Nouvelle fonctionnalité
 - `fix`: Correction de bug
 - `docs`: Documentation
@@ -75,6 +81,7 @@ docs/789-update-api-reference
 - `build`: Build system
 
 **Exemples de commits:**
+
 ```bash
 git commit -m "feat(graphql): add introspection query support"
 git commit -m "test(graphql): add introspection tests"
@@ -91,6 +98,7 @@ git commit -m "fix(auth): resolve token expiration edge case"
 - [ ] Tous les tests passent localement
 
 **Commandes:**
+
 ```bash
 npm run test              # Tous les tests
 npm run test:unit         # Tests unitaires
@@ -108,6 +116,7 @@ npm run test:coverage    # Vérifier coverage
 - [ ] Accessibilité vérifiée (RGAA)
 
 **Commandes:**
+
 ```bash
 npm run lint           # Vérifier le code
 npm run lint:fix       # Corriger automatiquement
@@ -125,7 +134,8 @@ npm run type-check     # Vérifier TypeScript
 - [ ] Commentaires pour logique complexe
 
 **Template JSDoc:**
-```typescript
+
+````typescript
 /**
  * Description de la fonction
  * @param paramName - Description du paramètre
@@ -137,9 +147,9 @@ npm run type-check     # Vérifier TypeScript
  * ```
  */
 export function myFunction(paramName: string): ReturnType {
-  // ...
+	// ...
 }
-```
+````
 
 ### ✅ 7. CHANGELOG.md
 
@@ -148,16 +158,20 @@ export function myFunction(paramName: string): ReturnType {
 - [ ] Référence à l'issue: `(#123)`
 
 **Format:**
+
 ```markdown
 ## [Unreleased]
 
 ### Added
+
 - GraphQL introspection support (#123)
 
 ### Fixed
+
 - Token expiration bug in authentication flow (#456)
 
 ### Changed
+
 - Updated API response format for better consistency (#789)
 ```
 
@@ -174,33 +188,40 @@ export function myFunction(paramName: string): ReturnType {
   - Checklist de revue
 
 **Template de PR:**
+
 ```markdown
 ## Description
+
 Brief description of the changes
 
 Closes #123
 
 ## Type of change
+
 - [ ] Bug fix
 - [x] New feature
 - [ ] Breaking change
 - [ ] Documentation update
 
 ## Changes
+
 - Added GraphQL introspection query support
 - Implemented schema explorer UI component
 - Added comprehensive tests
 
 ## Screenshots (if applicable)
+
 [Add screenshots here]
 
 ## Testing
+
 - [ ] Unit tests pass
 - [ ] Integration tests pass
 - [ ] E2E tests pass
 - [ ] Manual testing completed
 
 ## Checklist
+
 - [x] Code follows style guidelines
 - [x] Self-review completed
 - [x] Comments added for complex code
@@ -219,6 +240,7 @@ Closes #123
 - [ ] Pas de régression de performance
 
 **CI Checks obligatoires:**
+
 - ✅ Lint
 - ✅ Tests unitaires
 - ✅ Tests d'intégration
@@ -236,6 +258,7 @@ Closes #123
   - **PATCH** (0.0.x): Bug fixes (backward compatible)
 
 **Exemples:**
+
 - Nouvelle fonctionnalité (backward compatible): MINOR
 - Correction de bug: PATCH
 - Changement d'API incompatible: MAJOR
@@ -276,12 +299,14 @@ graph TD
 ### Scénario: Ajouter support GraphQL introspection
 
 #### 1. Créer l'issue
+
 ```bash
 # Via GitHub API ou UI
 Issue #123: feat(graphql): Add GraphQL introspection support
 ```
 
 #### 2. Créer la branche
+
 ```bash
 git checkout main
 git pull origin main
@@ -289,6 +314,7 @@ git checkout -b feature/123-graphql-introspection
 ```
 
 #### 3. Développement
+
 ```typescript
 // src/lib/services/graphql/introspection.ts
 /**
@@ -297,26 +323,28 @@ git checkout -b feature/123-graphql-introspection
  * @returns Schema information
  */
 export async function introspectSchema(endpoint: string): Promise<Schema> {
-  // Implementation
+	// Implementation
 }
 ```
 
 #### 4. Tests
+
 ```typescript
 // tests/unit/services/graphql/introspection.test.ts
 import { describe, it, expect } from 'vitest';
 import { introspectSchema } from '$lib/services/graphql/introspection';
 
 describe('introspectSchema', () => {
-  it('should fetch schema successfully', async () => {
-    const schema = await introspectSchema('https://api.example.com/graphql');
-    expect(schema).toBeDefined();
-    expect(schema.types).toBeInstanceOf(Array);
-  });
+	it('should fetch schema successfully', async () => {
+		const schema = await introspectSchema('https://api.example.com/graphql');
+		expect(schema).toBeDefined();
+		expect(schema.types).toBeInstanceOf(Array);
+	});
 });
 ```
 
 #### 5. Commits
+
 ```bash
 git add src/lib/services/graphql/introspection.ts
 git commit -m "feat(graphql): add introspection query service"
@@ -332,21 +360,25 @@ git commit -m "docs(graphql): add introspection documentation"
 ```
 
 #### 6. CHANGELOG
+
 ```markdown
 ## [Unreleased]
 
 ### Added
+
 - GraphQL schema introspection support (#123)
 - Schema explorer UI component for GraphQL endpoints (#123)
 ```
 
 #### 7. Create PR
+
 ```bash
 git push origin feature/123-graphql-introspection
 # Create PR on GitHub with proper description
 ```
 
 #### 8. Wait for CI & Review
+
 - CI passes ✅
 - Code review approved ✅
 - Merge to main ✅
@@ -401,6 +433,7 @@ git push origin feature/123-graphql-introspection
 - **Semver**: MAJOR
 
 **Exemple commit breaking:**
+
 ```bash
 git commit -m "feat(api)!: change authentication flow
 
@@ -470,32 +503,30 @@ npm run test:a11y
 
 ```svelte
 <script lang="ts">
-  export let label: string;
-  export let id: string;
-  
-  let inputValue = '';
+	export let label: string;
+	export let id: string;
+
+	let inputValue = '';
 </script>
 
 <!-- ✅ Bon: Label associé, ARIA, focus visible -->
 <div class="form-field">
-  <label for={id}>{label}</label>
-  <input
-    {id}
-    bind:value={inputValue}
-    type="text"
-    aria-describedby="{id}-help"
-    aria-required="true"
-  />
-  <span id="{id}-help" class="help-text">
-    Format: xxx-xxx-xxxx
-  </span>
+	<label for={id}>{label}</label>
+	<input
+		{id}
+		bind:value={inputValue}
+		type="text"
+		aria-describedby="{id}-help"
+		aria-required="true"
+	/>
+	<span id="{id}-help" class="help-text"> Format: xxx-xxx-xxxx </span>
 </div>
 
 <style>
-  input:focus {
-    outline: 2px solid var(--color-focus);
-    outline-offset: 2px;
-  }
+	input:focus {
+		outline: 2px solid var(--color-focus);
+		outline-offset: 2px;
+	}
 </style>
 ```
 
@@ -504,22 +535,26 @@ npm run test:a11y
 ## 📊 Métriques de qualité à respecter
 
 ### Code Coverage
+
 - **Minimum**: 80%
 - **Cible**: 90%
 - **Fichiers critiques**: 100%
 
 ### Performance
+
 - **Lighthouse Score**: ≥90
 - **First Contentful Paint**: <1.5s
 - **Time to Interactive**: <3s
 - **Bundle size**: Monitorer (pas de régression >10%)
 
 ### Accessibilité
+
 - **axe-core**: 0 violations
 - **Lighthouse Accessibility**: 100
 - **WAVE**: 0 erreurs
 
 ### Sécurité
+
 - **npm audit**: 0 vulnérabilités high/critical
 - **Snyk score**: A
 - **Headers score**: A+ (securityheaders.com)
@@ -565,12 +600,14 @@ npm run test:a11y
 ## 🎓 Ressources et références
 
 ### Documentation officielle
+
 - [Conventional Commits](https://www.conventionalcommits.org/)
 - [Semantic Versioning](https://semver.org/)
 - [Keep a Changelog](https://keepachangelog.com/)
 - [Git Flow](https://nvie.com/posts/a-successful-git-branching-model/)
 
 ### Outils recommandés
+
 - [Commitizen](https://github.com/commitizen/cz-cli) - Aide aux commits
 - [Husky](https://typicode.github.io/husky/) - Git hooks
 - [lint-staged](https://github.com/okonet/lint-staged) - Lint pre-commit

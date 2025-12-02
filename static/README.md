@@ -13,6 +13,7 @@ Ce dossier contient les assets statiques de l'application.
 ## Génération des icons
 
 Vous pouvez utiliser des outils comme:
+
 - [RealFaviconGenerator](https://realfavicongenerator.net/)
 - [PWA Asset Generator](https://github.com/onderceylan/pwa-asset-generator)
 

@@ -11,12 +11,14 @@ Ce workflow doit être suivi pour toute modification du projet RipApi.
 // turbo-all
 
 ### 1. Créer l'issue GitHub
+
 ```bash
 # Via GitHub CLI (si disponible)
 gh issue create --title "feat(scope): description" --body "Description détaillée" --label "feature"
 ```
 
 ### 2. Créer la branche
+
 ```bash
 git checkout main
 git pull origin main
@@ -28,6 +30,7 @@ git checkout -b <type>/<issue-number>-<description>
 ## 💻 Développement
 
 ### 3. Développer avec commits atomiques
+
 ```bash
 # Faire des modifications
 git add <files>
@@ -37,6 +40,7 @@ git commit -m "<type>(<scope>): <description>"
 **Format de commit:** [Conventional Commits](https://www.conventionalcommits.org/)
 
 ### 4. Exécuter les tests
+
 ```bash
 # Tests unitaires
 npm run test:unit
@@ -52,6 +56,7 @@ npm run test:coverage
 ```
 
 ### 5. Vérifier la qualité du code
+
 ```bash
 # Lint
 npm run lint
@@ -66,22 +71,26 @@ npm run type-check
 ## 📝 Documentation
 
 ### 6. Mettre à jour la documentation
+
 - [ ] JSDoc pour nouvelles fonctions
 - [ ] README.md si nécessaire
 - [ ] Documentation API
 - [ ] CHANGELOG.md
 
 **Format CHANGELOG.md:**
+
 ```markdown
 ## [Unreleased]
 
 ### Added/Changed/Fixed/Removed/Deprecated/Security
+
 - Description (#issue-number)
 ```
 
 ## 🚀 Créer la Pull Request
 
 ### 7. Push et créer PR
+
 ```bash
 # Push la branche
 git push origin <branch-name>
@@ -91,19 +100,23 @@ gh pr create --title "<type>(<scope>): <description>" --body "Description\n\nClo
 ```
 
 ### 8. Template PR
+
 ```markdown
 ## Description
+
 Brief description
 
 Closes #<issue-number>
 
 ## Type of change
+
 - [ ] Bug fix
 - [ ] New feature
 - [ ] Breaking change
 - [ ] Documentation
 
 ## Checklist
+
 - [ ] Tests pass
 - [ ] Lint pass
 - [ ] Documentation updated
@@ -113,6 +126,7 @@ Closes #<issue-number>
 ## ✅ Vérifications CI
 
 ### 9. Attendre CI
+
 - ✅ Lint
 - ✅ Tests
 - ✅ Build
@@ -120,6 +134,7 @@ Closes #<issue-number>
 - ✅ Coverage ≥80%
 
 ### 10. Corrections si échec
+
 ```bash
 # Corriger les problèmes
 git add <files>
@@ -130,17 +145,20 @@ git push origin <branch-name>
 ## 🔍 Revue et merge
 
 ### 11. Revue de code
+
 - Attendre approbation
 - Répondre aux commentaires
 - Faire les modifications demandées
 
 ### 12. Merge
+
 - Squash and merge (par les mainteneurs)
 - Suppression automatique de la branche
 
 ## 📊 Post-merge
 
 ### 13. Vérifications post-merge
+
 - [ ] CI main passe
 - [ ] Déploiement OK
 - [ ] Fermer l'issue si pas auto-fermée
@@ -148,6 +166,7 @@ git push origin <branch-name>
 ## 🔒 Règles de sécurité
 
 ### Avant chaque commit
+
 ```bash
 # Scan de secrets
 npm run security:secrets
@@ -157,6 +176,7 @@ npm audit
 ```
 
 ### Checklist sécurité
+
 - [ ] Pas de secrets hardcodés
 - [ ] Variables d'environnement pour config sensible
 - [ ] Validation des entrées utilisateur
@@ -165,6 +185,7 @@ npm audit
 ## ♿ Accessibilité (RGAA)
 
 ### Tests d'accessibilité
+
 ```bash
 # Tests automatisés
 npm run test:a11y
@@ -177,6 +198,7 @@ npm run test:a11y
 ```
 
 ### Checklist a11y
+
 - [ ] Contraste ≥4.5:1
 - [ ] Labels ARIA
 - [ ] Navigation clavier

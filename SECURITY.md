@@ -12,7 +12,7 @@
 
 Instead, please report them via email to: **security@ripapi.dev** (à créer)
 
-You should receive a response within 48 hours. If for some reason you do not, please follow up via  email to ensure we received your original message.
+You should receive a response within 48 hours. If for some reason you do not, please follow up via email to ensure we received your original message.
 
 Please include the following information:
 
@@ -33,7 +33,7 @@ When we receive a security bug report, we will:
 1. Confirm the problem and determine the affected versions
 2. Audit code to find any similar problems
 3. Prepare fixes for all supported versions
-4.Release patches as soon as possible
+   4.Release patches as soon as possible
 
 ## Security Best Practices
 
@@ -51,6 +51,7 @@ When we receive a security bug report, we will:
 refer to [DEVELOPMENT.md](./DEVELOPMENT.md) for security guidelines during development.
 
 Key points:
+
 - Never commit secrets or API keys
 - Run `npm audit` regularly
 - Keep dependencies up to date
