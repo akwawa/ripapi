@@ -212,6 +212,7 @@ Objectif de coverage: **80%** minimum
 - [CONTRIBUTING.md](./CONTRIBUTING.md) - Guide de contribution
 - [DEVELOPMENT.md](./DEVELOPMENT.md) - Processus de développement
 - [CHANGELOG.md](./CHANGELOG.md) - Historique des versions
+- [SECURITY.md](./SECURITY.md) - Politique de sécurité
 
 ---
 
