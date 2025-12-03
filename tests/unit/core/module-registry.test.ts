@@ -21,7 +21,7 @@ describe('ModuleRegistry', () => {
 	beforeEach(() => {
 		// Clear registry before each test
 		const allModules = moduleRegistry.getAll();
-		allModules.forEach((module) => {
+		allModules.forEach((module: Module) => {
 			moduleRegistry.unregister(module.id);
 		});
 	});

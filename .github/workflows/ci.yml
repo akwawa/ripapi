@@ -29,6 +29,9 @@ jobs:
       - name: Check formatting
         run: npm run format:check
 
+      - name: Sync SvelteKit
+        run: npx svelte-kit sync
+
       - name: Type check
         run: npm run type-check
 
