@@ -27,7 +27,6 @@ class ModuleRegistry {
 		}
 
 		this.modules.set(module.id, module);
-		console.log(`Module registered: ${module.name} (${module.id})`);
 	}
 
 	/**
@@ -46,7 +45,6 @@ class ModuleRegistry {
 		}
 
 		this.modules.delete(moduleId);
-		console.log(`Module unregistered: ${module.name} (${module.id})`);
 	}
 
 	/**
@@ -92,7 +90,6 @@ class ModuleRegistry {
 
 		await module.init();
 		module.enabled = true;
-		console.log(`Module enabled: ${module.name} (${module.id})`);
 	}
 
 	/**
@@ -113,7 +110,6 @@ class ModuleRegistry {
 
 		await module.destroy();
 		module.enabled = false;
-		console.log(`Module disabled: ${module.name} (${module.id})`);
 	}
 
 	/**

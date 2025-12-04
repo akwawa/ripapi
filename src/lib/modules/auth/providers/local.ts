@@ -12,13 +12,9 @@ export class LocalAuthProvider implements AuthProvider {
 	enabled = false;
 	type = 'local';
 
-	async init(): Promise<void> {
-		console.log('Local auth provider initialized');
-	}
+	async init(): Promise<void> {}
 
-	async destroy(): Promise<void> {
-		console.log('Local auth provider destroyed');
-	}
+	async destroy(): Promise<void> {}
 
 	async authenticate(credentials: unknown): Promise<AuthResult> {
 		// Type guard for credentials
@@ -41,7 +37,6 @@ export class LocalAuthProvider implements AuthProvider {
 
 		// TODO: Implement actual authentication against database
 		// For now, this is a placeholder
-		console.log(`Authenticating user: ${username}`);
 
 		// Placeholder success response
 		return {
@@ -60,13 +55,12 @@ export class LocalAuthProvider implements AuthProvider {
 
 	async validate(token: string): Promise<boolean> {
 		// TODO: Implement actual token validation
-		console.log(`Validating token: ${token}`);
+
 		return token === 'placeholder-token';
 	}
 
-	async logout(token: string): Promise<void> {
+	async logout(_token: string): Promise<void> {
 		// TODO: Implement actual token revocation
-		console.log(`Logging out token: ${token}`);
 	}
 
 	/**

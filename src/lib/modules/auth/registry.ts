@@ -19,7 +19,6 @@ class AuthProviderRegistry {
 		}
 
 		this.providers.set(provider.id, provider);
-		console.log(`Auth provider registered: ${provider.name} (${provider.type})`);
 	}
 
 	/**
@@ -29,7 +28,6 @@ class AuthProviderRegistry {
 	async unregister(providerId: string): Promise<void> {
 		const provider = this.providers.get(providerId);
 		if (!provider) {
-			console.warn(`Auth provider "${providerId}" not found`);
 			return;
 		}
 
@@ -42,7 +40,6 @@ class AuthProviderRegistry {
 		}
 
 		this.providers.delete(providerId);
-		console.log(`Auth provider unregistered: ${provider.name}`);
 	}
 
 	/**
@@ -95,7 +92,6 @@ class AuthProviderRegistry {
 		}
 
 		this.activeProvider = provider;
-		console.log(`Active auth provider set to: ${provider.name}`);
 	}
 
 	/**

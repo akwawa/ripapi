@@ -14,11 +14,11 @@ export class GraphQLProtocol implements APIProtocol {
 	protocol = 'graphql';
 
 	async init(): Promise<void> {
-		console.log('GraphQL protocol initialized');
+		// GraphQL protocol ready
 	}
 
 	async destroy(): Promise<void> {
-		console.log('GraphQL protocol destroyed');
+		// GraphQL protocol cleanup
 	}
 
 	async execute(request: APIRequest): Promise<APIResponse> {

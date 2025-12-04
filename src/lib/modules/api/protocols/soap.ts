@@ -14,11 +14,11 @@ export class SOAPProtocol implements APIProtocol {
 	protocol = 'soap';
 
 	async init(): Promise<void> {
-		console.log('SOAP protocol initialized');
+		// SOAP protocol ready
 	}
 
 	async destroy(): Promise<void> {
-		console.log('SOAP protocol destroyed');
+		// SOAP protocol cleanup
 	}
 
 	async execute(request: APIRequest): Promise<APIResponse> {

@@ -13,11 +13,11 @@ export class RESTProtocol implements APIProtocol {
 	protocol = 'rest';
 
 	async init(): Promise<void> {
-		console.log('REST protocol initialized');
+		// REST protocol ready
 	}
 
 	async destroy(): Promise<void> {
-		console.log('REST protocol destroyed');
+		// REST protocol cleanup
 	}
 
 	async execute(request: APIRequest): Promise<APIResponse> {

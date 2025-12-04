@@ -18,7 +18,6 @@ class APIProtocolRegistry {
 		}
 
 		this.protocols.set(protocol.id, protocol);
-		console.log(`API protocol registered: ${protocol.name} (${protocol.protocol})`);
 	}
 
 	/**
@@ -28,7 +27,6 @@ class APIProtocolRegistry {
 	async unregister(protocolId: string): Promise<void> {
 		const protocol = this.protocols.get(protocolId);
 		if (!protocol) {
-			console.warn(`API protocol "${protocolId}" not found`);
 			return;
 		}
 
@@ -37,7 +35,6 @@ class APIProtocolRegistry {
 		}
 
 		this.protocols.delete(protocolId);
-		console.log(`API protocol unregistered: ${protocol.name}`);
 	}
 
 	/**

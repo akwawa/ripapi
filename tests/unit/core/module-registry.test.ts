@@ -11,10 +11,10 @@ describe('ModuleRegistry', () => {
 		description: 'Test module',
 		enabled: false,
 		init: async () => {
-			console.log(`${id} initialized`);
+			// Module initialization
 		},
 		destroy: async () => {
-			console.log(`${id} destroyed`);
+			// Module cleanup
 		}
 	});
 

@@ -12,13 +12,9 @@ export class BearerAuthProvider implements AuthProvider {
 	enabled = false;
 	type = 'bearer';
 
-	async init(): Promise<void> {
-		console.log('Bearer auth provider initialized');
-	}
+	async init(): Promise<void> {}
 
-	async destroy(): Promise<void> {
-		console.log('Bearer auth provider destroyed');
-	}
+	async destroy(): Promise<void> {}
 
 	async authenticate(credentials: unknown): Promise<AuthResult> {
 		// Type guard for credentials
@@ -52,9 +48,13 @@ export class BearerAuthProvider implements AuthProvider {
 		return !!token && token.length > 0;
 	}
 
+	async clearToken(_token: string): Promise<void> {
+		// TODO: Implement actual token revocation/clearance
+	}
+
 	async logout(token: string): Promise<void> {
 		// Bearer tokens are stateless, nothing to revoke locally
-		console.log(`Bearer token cleared: ${token.substring(0, 10)}...`);
+		this.clearToken(token);
 	}
 
 	/**
